@@ -1,0 +1,39 @@
+plugins {
+	id 'org.springframework.boot' version '2.6.7'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+	id "io.freefair.lombok" version "6.4.3"
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	// Spring MVC
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	// Spring JDBC
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	// Live reload
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	// JUnit
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	// JSP (JSTL, EL)
+	runtimeOnly 'org.apache.tomcat.embed:tomcat-embed-jasper'
+	implementation 'javax.servlet:jstl:1.2'
+
+	// MariaDB JDBC Driver
+	implementation 'org.mariadb.jdbc:mariadb-java-client:3.+'
+
+	// OWASP encoder
+	implementation 'org.owasp.encoder:encoder:1.+'
+	implementation 'org.owasp.encoder:encoder-jsp:1.+'
+
+	// apache commons
+	implementation 'org.apache.commons:commons-lang3:3.+'
+}
+
+test {
+	useJUnitPlatform()
+}
